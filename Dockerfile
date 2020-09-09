@@ -1,4 +1,5 @@
 FROM python:3.6
-ADD . /flask_application
-WORKDIR /flask_application
-RUN pip install -r requirements.txt
+WORKDIR /
+ADD https://raw.githubusercontent.com/karthikbanoor/flask-crud-app/master/git_clone_and_run.sh /
+RUN chmod +x /git_clone_and_run.sh
+ENTRYPOINT ["/git_clone_and_run.sh"]
